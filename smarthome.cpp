@@ -84,18 +84,30 @@ public:
 };
 
 int main() {
-    LightControl livingRoomLights;
-    TemperatureControl mainThermostat;
-    SecuritySystem homeSecurity;
+    
+    const int numLights = 3;
+    LightControl livingRoomLights[numLights];
+    
+    const int numThermostats = 2;
+    TemperatureControl thermostats[numThermostats];
+    
+    const int numSecuritySystems = 1;
+    SecuritySystem securitySystems[numSecuritySystems];
 
-    livingRoomLights.turnOn();
-    livingRoomLights.setBrightness(75);
+    for (int i = 0; i < numLights; ++i) {
+        livingRoomLights[i].turnOn();
+        livingRoomLights[i].setBrightness(50 + i * 10);
+    }
 
-    mainThermostat.turnOn();
-    mainThermostat.setTemperature(24);
+    for (int i = 0; i < numThermostats; ++i) {
+        thermostats[i].turnOn();
+        thermostats[i].setTemperature(20 + i * 5); 
+    }
 
-    homeSecurity.turnOn();
-    homeSecurity.lockDoors();
+    for (int i = 0; i < numSecuritySystems; ++i) {
+        securitySystems[i].turnOn();
+        securitySystems[i].lockDoors();
+    }
 
     return 0;
 }
