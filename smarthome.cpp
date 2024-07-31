@@ -15,18 +15,18 @@ private:
 
 public:
     void turnOn() override {
-        status = true;
-        cout << "Lights turned on. Brightness: " << brightness << "%" << endl;
+        this->status = true;
+        cout << "Lights turned on. Brightness: " << this->brightness << "%" << endl;
     }
 
     void turnOff() override {
-        status = false;
+        this->status = false;
         cout << "Lights turned off." << endl;
     }
 
     void setBrightness(int level) {
-        brightness = level;
-        cout << "Brightness set to " << brightness << "%" << endl;
+        this->brightness = level;
+        cout << "Brightness set to " << this->brightness << "%" << endl;
     }
 };
 
@@ -37,22 +37,22 @@ private:
 
 public:
     void turnOn() override {
-        status = true;
-        cout << "Thermostat turned on. Temperature: " << temperature << "°C" << endl;
+        this->status = true;
+        cout << "Thermostat turned on. Temperature: " << this->temperature << "°C" << endl;
     }
 
     void turnOff() override {
-        status = false;
+        this->status = false;
         cout << "Thermostat turned off." << endl;
     }
 
     void setTemperature(int temp) {
-        temperature = temp;
-        cout << "Temperature set to " << temperature << "°C" << endl;
+        this->temperature = temp;
+        cout << "Temperature set to " << this->temperature << "°C" << endl;
     }
 
     int getTemperature() {
-        return temperature;
+        return this->temperature;
     }
 };
 
@@ -63,26 +63,25 @@ private:
 
 public:
     void turnOn() override {
-        status = true;
+        this->status = true;
         cout << "Security system activated." << endl;
     }
 
     void turnOff() override {
-        status = false;
+        this->status = false;
         cout << "Security system deactivated." << endl;
     }
 
     void lockDoors() {
-        doorLocked = true;
+        this->doorLocked = true;
         cout << "Doors locked." << endl;
     }
 
     void unlockDoors() {
-        doorLocked = false;
+        this->doorLocked = false;
         cout << "Doors unlocked." << endl;
     }
 };
-
 
 int main() {
     LightControl livingRoomLights;
