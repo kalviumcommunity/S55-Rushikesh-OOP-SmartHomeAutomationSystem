@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Base class for general device
 class Device {
 protected:
     bool status;
@@ -13,7 +12,6 @@ public:
     virtual ~Device() {}
 };
 
-// Interface for device control, inherits from Device
 class DeviceControl : public Device {
 public:
     virtual void turnOn() = 0;
